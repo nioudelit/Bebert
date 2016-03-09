@@ -1,6 +1,7 @@
 #Bebert — Bidouciel d'illico-cinoche
 
 ![GitHub Logo](logoCap.png)
+![GitHub Logo](ahah.png)
 
 Voici un petit programme réalisé avec Processing (+ shaders) pour la création visuelle en direct… (plus ou moins du VJ quoi). 
 
