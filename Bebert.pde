@@ -4,6 +4,8 @@
 
 import processing.video.*;
 Capture cam;
+PrintWriter periph;
+String[] lignes;
 
 //EFFETS **************************
 PShader hsb;
@@ -27,7 +29,17 @@ PImage fond;
 void setup() {
   fullScreen(P2D); //size(640, 480, P2D);
   String[] cameras = Capture.list();
-  cam = new Capture(this, cameras[0]);
+  
+  lignes = loadStrings("config.txt");
+  int config = int(lignes[0]);
+  periph = createWriter("peripheriques.txt");
+  for(int i = 0; i < cameras.length; i++){
+    periph.println(i + " " + cameras[i]);
+  }
+  periph.flush();
+  periph.close();
+  
+  cam = new Capture(this, cameras[config]);
   cam.start();
   for (int i = 0; i < boucles.length; i++) {
     boucles[i] = new Calque(i);
@@ -45,9 +57,14 @@ void draw() {
   hsb.set("brightness", bri);
   hsb.set("saturation", parametres[0]);
   hsb.set("contrast", parametres[1]);
-  if (sh) { shader(hsb); }
+  if (sh) { 
+    shader(hsb);
+  }
   for (int i = 0; i < 3; i++) {
     if (bcl[i]) {
+      /*if (frameCount % boucles[i].idid() == 0) {
+        boucles[i].capturer();
+      }*/
       boucles[i].jouer();
     }
   }

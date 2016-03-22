@@ -20,6 +20,18 @@ J’ai fait ce programme dans l’idée de pouvoir réaliser en direct des anima
 2) Ergonomie/raccourics/Interface avec Arduino
 + Version openFrameworks pour Raspberry Pi
 
+### Ergonomie, optimiser…
+
+Raccouris généraux
+1) Afficher flux vidéo : S
+2) Augmenter/diminuer Luminosité : B/N
+3) Passer en mode Incrustation (non-reversible à modifier) : clic
+4) Clic + position XY souris Modification Contraste/Saturation
+5) Seuil incrustation
+
+
+Raccourcis locaux
+
 
 ## Souris Verte le 3 mars
 

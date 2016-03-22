@@ -11,15 +11,18 @@ class Calque {
   }
 
   void capturer() {
-    if(curseur < 50){
+    if (curseur < 50) {
       images[curseur].copy(cam, 0, 0, width, height, 0, 0, width, height);
       curseur += 1;
-    }
+    } 
+    /*if (curseur == 49) {
+      effacer();
+    }*/
   }
 
   void jouer() {
-    if(compteur < curseur){
-      if(frameCount % vit == 0){
+    if (compteur < curseur) {
+      if (frameCount % vit == 0) {
         compteur++;
       }
     }
@@ -33,5 +36,9 @@ class Calque {
   void effacer() {
     curseur = 0;
     compteur = 0;
+  }
+
+  int idid() {
+    return (identifiant + 1) * 10;
   }
 }
